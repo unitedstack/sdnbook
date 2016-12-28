@@ -24,7 +24,7 @@ UnitedStack<sup>®</sup> UNP Wilkes 作为 UNP 文档的第二版，其命名来
 
 ###  UnitedStack<sup>®</sup> UNP Wilkes 的内容
 
-UnitedStack<sup>®</sup> UNP Wilkes 的基础组成包含以下方面：
+UnitedStack<sup>®</sup> UNP Wilkes 的基础组成包含但不限于以下方面：
 
  - 网络基础
   - 综述

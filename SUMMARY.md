@@ -2,8 +2,9 @@
 
 * [前言](README.md)
 * [网络基础](src/base/overview.md)
+   * [网络分层和分层意义](src/base/osi.md)
    * [物理层](src/base/physical_layer.md)
-   * [数据链路层](src/base/data_layer/data_layer.md)
+   * [数据链路层](src/base/data_layer/overview.md)
        * [两种信道类型](src/base/data_layer/two_types.md)
        * [以太网](src/base/data_layer/ethernet.md)
        * [网络适配器的作用](src/base/data_layer/nic.md)
