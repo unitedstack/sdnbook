@@ -45,6 +45,13 @@ ARP 报文：
 因此，有了 ARP 协议之后，就可以得到同一个子网络内的主机 MAC 地址，
 可以把数据包发送到任意一台主机之上了。
 
+### 参考文档
+
+ ARP 协议作为网络中最基本的协议之一，一定要深刻理解 ARP 的意义，在此推荐几篇不错的文档以供参考：
+* [Networking Basics: How ARP Works](https://www.tummy.com/articles/networking-basics-how-arp-works/)
+* [Understanding How ARP Works](http://www.juniper.net/documentation/en_US/junose16.1/topics/concept/ip-arp-understanding.html)
+* [Understanding ARP (Address Resolution Protocol)](https://www.youtube.com/watch?v=bOQ4BoiqTeE)
+
 
 [3]: ../../../images/base/arp.png
 [4]: ../../../images/base/arp_packet.png

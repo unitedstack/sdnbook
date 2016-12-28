@@ -80,6 +80,11 @@ TCP/IP 分层模型的分层以以太网上传输 UDP 数据包如图所示:
  ![tcp_ip][3]
 
 
+参考文档：
+
+* [计算机网络基本概念](https://www.zybuluo.com/Duanxx/note/557360)
+
+
 [1]: ../../../images/base/ftp.png
 [2]: ../../../images/base/osi.png
 [3]: ../../../images/base/tcp_ip.png

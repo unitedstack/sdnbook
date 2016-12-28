@@ -40,6 +40,7 @@
    * [OpenvSwitch](src/linux_base/ovs.md)
    * [故障排查](src/linux_base/troubleshooting.md)
    * [流量控制](src/linux_base/tc.md)
+   * [性能调优](src/linux_base/performance.md)
 * [SDN 网络](src/sdn/overview.md)
    * [控制平面和数据平面](src/sdn/control_data_plan.md)
    * [SDN 控制器](src/sdn/controller.md)

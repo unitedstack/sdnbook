@@ -33,6 +33,11 @@ ICMP 报文：
   * Code：0，表示 Reserved ( 注：有关所有的 Type 和 Code 可参考[ICMP Types and Codes](http://www.nthelp.com/icmp.html) )
 
 
+### 参考文档
+
+* [Understanding the ICMP Protocol](https://www.google.co.jp/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwjh7fOZ6ZbRAhWDj5QKHQJjBz8QFggjMAE&url=http%3A%2F%2Fwww.windowsnetworking.com%2Farticles-tutorials%2Fnetwork-protocols%2FUnderstanding-ICMP-Protocol-Part1.html&usg=AFQjCNEUsB0RvcW6k05IiMhRsJpU1B1r6A)
+
+
 [5]: ../../../images/base/icmp.png
 [6]: ../../../images/base/icmp_format.png
 [7]: ../../../images/base/ip_ip_header.png

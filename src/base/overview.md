@@ -53,3 +53,9 @@
     * [异步传输模式](https://zh.wikipedia.org/wiki/异步传输模式)
     * [帧中继](https://zh.wikipedia.org/wiki/帧中继)
     * [SDH](https://zh.wikipedia.org/wiki/SDH)
+
+
+关于计算机网络强烈推荐两个博客：
+
+1. [协议森林](http://www.cnblogs.com/vamei/archive/2012/12/05/2802811.html)
+2. [互联网协议入门](http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html)
