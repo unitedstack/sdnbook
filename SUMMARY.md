@@ -19,7 +19,7 @@
        * [NAT](src/base/ip_layer/nat.md)
    * [传输层](src/base/transport/overview.md)
        * [TCP](src/base/transport/tcp.md)
-       * [TCP](src/base/transport/udp.md)
+       * [UDP](src/base/transport/udp.md)
    * [应用层](src/base/app_layer.md)
    * [硬件设备](src/base/physical_devices.md)
 * [Linux 网络基础](src/linux_base/overview.md)
