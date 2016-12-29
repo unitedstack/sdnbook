@@ -1,4 +1,6 @@
-## VLAN
+# VLAN
+
+---
 
 虚拟区域（Virtual Local Area Network 或简写 VLAN, V-LAN）是一种建构于局域网交
 换技术（LAN Switch）的网络管理的技术，

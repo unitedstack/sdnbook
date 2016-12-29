@@ -2,6 +2,7 @@
 
 ---
 
+
 ## 简介
 
 传输控制协议（Transmission Control Protocol，缩写为 TCP）是一种面向连接的、
@@ -115,6 +116,15 @@ RFC793 中规定 MSL 为 2 分钟，但这完全是从工程上来考虑，
 MSL 要大于 TTL。
 
 
+
+参考文档：
+
+* [TCP 的 TIME_WAIT 快速回收与重用](http://blog.csdn.net/dog250/article/details/13760985)
+* [TCP 传输工作原理](http://www.cnblogs.com/mrsandstorm/p/5701691.html)
+* [TCP 协议中的三次握手和四次挥手](http://blog.csdn.net/whuslei/article/details/6667471/)
+* [TCP/IP 中 MSL 详解](http://www.voidcn.com/blog/10706198/article/p-5980195.html)
+* [TCP 的那些事儿（上）](http://coolshell.cn/articles/11564.html)
+* [TCP 的那些事儿（下）](http://coolshell.cn/articles/11609.html)
 
 
 [1]: ../../../images/base/tcp.png

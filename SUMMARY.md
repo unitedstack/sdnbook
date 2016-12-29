@@ -11,7 +11,6 @@
        * [VLAN](src/base/data_layer/vlan.md)
        * [隧道技术](src/base/data_layer/tunnel.md)
    * [网络层](src/base/ip_layer/overview.md)
-       * [IP 协议](src/base/ip_layer/ip_layer.md)
        * [ARP 协议](src/base/ip_layer/arp.md)
        * [ICMP 协议](src/base/ip_layer/icmp.md)
        * [网关协议](src/base/ip_layer/gw.md)

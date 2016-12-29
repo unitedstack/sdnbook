@@ -1,11 +1,13 @@
-### IP 组播相关
+# IP 组播相关
+
+---
 
 组播（又称：多播）是指把信息同时传递给一组目的地址。与多播相比，常规的点到单点传递被称作单播。
 IP 多播是一种通过使用一个多播地址将数据在同一时间以高效的方式发往处于 TCP/IP
 网络上的多个接收者的协议。
 
 
-#### VRRP
+## VRRP
 
 [VRRP](https://en.wikipedia.org/wiki/Virtual_Router_Redundancy_Protocol) 协议
 使用到了 IP 组播，是由 IETF 提出的解决局域网中配置静态网关出现单点失效现象的路由协议。

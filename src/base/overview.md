@@ -59,3 +59,6 @@
 
 1. [协议森林](http://www.cnblogs.com/vamei/archive/2012/12/05/2802811.html)
 2. [互联网协议入门](http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html)
+
+上述的两个博客以非常通俗易懂的语言，由浅入深的介绍了计算机网络协议相关的
+方方面面。

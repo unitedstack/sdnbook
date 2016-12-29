@@ -31,5 +31,8 @@ UDP 有哪些优点？
 
  ![udp][1]
 
+参考文档：
+
+ * [协议森林07 傀儡 (UDP协议)](http://www.cnblogs.com/vamei/archive/2012/12/05/2798208.html)
 
 [1]: ../../../images/base/udp.png
