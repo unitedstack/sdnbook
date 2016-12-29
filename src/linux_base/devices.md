@@ -76,3 +76,9 @@ Linux 上的 MACTAP 设备可以简化这种结构。MACVTAP 设备集成了 MAC
 创建 MACVTAP 设备：
 
     ip link add link ens160 macvtap0 type macvtap mode bridge
+
+
+
+参考文档
+
+* [虚拟网络设备](http://www.just4coding.com/blog/2016/12/04/virtualnetworkdevice/)

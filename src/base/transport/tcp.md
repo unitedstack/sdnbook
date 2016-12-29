@@ -133,4 +133,4 @@ MSL 要大于 TTL。
 [4]: ../../../images/base/hand2.png
 [5]: ../../../images/base/hand3.png
 [6]: ../../../images/base/bye.png
-[7]: ../../../images/base/all.png
+[7]: ../../../images/base/tcp_all.png

@@ -76,4 +76,4 @@ VNFM 可能有多个。
 
 
 
-[1]: ../../../images/sdn/mano.png
+[1]: ../../images/sdn/mano.png

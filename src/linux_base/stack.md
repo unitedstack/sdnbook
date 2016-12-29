@@ -84,8 +84,8 @@ Netfilter 在内核中规定了五个规则链（也是五个钩子函数），
 
 * [洞悉 Linux下 的 Netfilter & iptables](http://blog.chinaunix.net/uid-23069658-id-3160506.html)
 
-[1]: ../../../images/linux_base/conn.png
-[2]: ../../../images/linux_base/stack.png
-[3]: ../../../images/linux_base/netfilter.png
-[4]: ../../../images/linux_base/netfilter2.png
-[5]: ../../../images/linux_base/iptables.png
+[1]: ../../images/linux_base/conn.png
+[2]: ../../images/linux_base/stack.png
+[3]: ../../images/linux_base/netfilter.png
+[4]: ../../images/linux_base/netfilter2.png
+[5]: ../../images/linux_base/iptables.png

@@ -119,5 +119,5 @@
  * [为什么要使用叶脊（leaf-spine）拓扑网络？](http://database.ctocio.com.cn/422/13176422.shtml)
 
 
-[1]: ../../../images/sdn/three.png
-[2]: ../../../images/sdn/spine_leaf.png
+[1]: ../../images/sdn/three.png
+[2]: ../../images/sdn/spine_leaf.png

@@ -100,5 +100,5 @@ b 数据库进行操作。
 
 
 
-[1]: ../../../images/linux_base/ovs.png
-[2]: ../../../images/linux_base/ovs_work.png
+[1]: ../../images/linux_base/ovs.png
+[2]: ../../images/linux_base/ovs_work.png
