@@ -12,14 +12,14 @@
 
 二层隧道协议：
 
- * PPTP ：[PPTP 点到点隧道协议](https://en.wikipedia.org/wiki/Point-to-Point_Tunneling_Protocol)是由 PPTP 论坛开发的点到点的安全隧道协议，
+ * PPTP ：[PPTP ](https://en.wikipedia.org/wiki/Point-to-Point_Tunneling_Protocol)是由 PPTP 论坛开发的点到点的安全隧道协议，
 为使用电话上网的用户提供安全 VPN 业务。
 
- * L2F ：[L2F（Layer 2 Forwarding）](https://en.wikipedia.org/wiki/Layer_2_Forwarding_Protocol)是由 Cisco 公司提出的，
+ * L2F ：[L2F ](https://en.wikipedia.org/wiki/Layer_2_Forwarding_Protocol)是由 Cisco 公司提出的，
 可以在多种介质（如 ATM、帧中继、IP）上建立多协议的安全 VPN 的通信方式。
 
- * L2TP：[L2TP](https://en.wikipedia.org/wiki/Layer_2_Tunneling_Protocol) 结合了 L2F 和 PPTP 的优点，
-可以让用户从客户端或接人服务器端发起VPN 连接。
+ * L2TP：[L2TP ](https://en.wikipedia.org/wiki/Layer_2_Tunneling_Protocol) 结合了 L2F 和 PPTP 的优点，
+可以让用户从客户端或接人服务器端发起 VPN 连接。
 L2TP 定义了利用公共网络设施封装传输链路层 PPP 帧的方法。
 
 
@@ -27,7 +27,7 @@ L2TP 定义了利用公共网络设施封装传输链路层 PPP 帧的方法。
 
  * IPSec：[IPSec](https://en.wikipedia.org/wiki/IPsec) 是一个三层 VPN 协议标准，它支持信息通过 IP 公>网的安全传输。
 
- * GRE：[GRE](https://en.wikipedia.org/wiki/Generic_Routing_Encapsulation) 规定了如何用一种网络协议去
+ * GRE：[GRE](https://en.wikipedia.org/wiki/Generic_Routing_Encapsulation)
+ 规定了如何用一种网络协议去
 封装另一种网络协议的方法。
-GRE 的隧道由两端的源 IP 地址和目的 IP 地址来定义，允许用户使用 IP 包封装 IP、 IPX、AppleTalk 包，并支
-持全部的路由协议（如 RIP2、OSPF 等）。
+GRE 的隧道由两端的源 IP 地址和目的 IP 地址来定义，允许用户使用 IP 包封装 IP、 IPX、AppleTalk 包，并支持全部的路由协议（如 RIP2、OSPF 等）。
