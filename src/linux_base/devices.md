@@ -45,8 +45,9 @@ network namespace 连接起来。
 
 创建 Veth Pair：
 
-    ip link add dev veth0 type veth peer name veth1
-
+```
+ip link add dev veth0 type veth peer name veth1
+```
 
 ## MACVLAN
 
@@ -58,11 +59,15 @@ Linux 通过 MACVLAN 技术在一个物理网卡上创建多个 MACVLAN 虚拟�
 
 创建 MACVLAN 设备并自动分配MAC地址：
 
-    ip link add link ens160 name mac0 type macvlan
+```
+ip link add link ens160 name mac0 type macvlan
+```
 
 也可以指定MAC地址创建设备：
 
-    ip link add link ens160 name mac1 address 52:22:33:44:55:66 type macvlan
+```
+ip link add link ens160 name mac1 address 52:22:33:44:55:66 type macvlan
+```
 
 
 ## MACVTAP
@@ -75,9 +80,9 @@ Linux 上的 MACTAP 设备可以简化这种结构。MACVTAP 设备集成了 MAC
 
 创建 MACVTAP 设备：
 
-    ip link add link ens160 macvtap0 type macvtap mode bridge
-
-
+```
+ip link add link ens160 macvtap0 type macvtap mode bridge
+```
 
 参考文档
 

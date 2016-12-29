@@ -20,71 +20,86 @@ net-tools 起源于 BSD 的 TCP/IP 工具箱，后来成为老版本 Linux 内�
 
   需要注意的是，通过 `ip link` 命令查看到的所有网络接口包括未激活的接口。
 
-    [root@packstack ~]# ip link
-    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT
-        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT qlen 1000
-        link/ether fa:16:3e:08:e6:9c brd ff:ff:ff:ff:ff:ff
+```
+[root@packstack ~]# ip link
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT qlen 1000
+   link/ether fa:16:3e:08:e6:9c brd ff:ff:ff:ff:ff:ff
+```
 
 ### 静态路由的查看、添加和删除
 
 查看当前路由：
 
-    [root@packstack ~]# ip route
-    default via 192.168.0.1 dev eth0  proto static  metric 100
-    192.168.0.0/24 dev eth0  proto kernel  scope link  src 192.168.0.9  metric 100
+```
+[root@packstack ~]# ip route
+default via 192.168.0.1 dev eth0  proto static  metric 100
+192.168.0.0/24 dev eth0  proto kernel  scope link  src 192.168.0.9  metric 100
+```
 
 添加路由：
 
   添加静态路由：
   
-    [root@packstack ~]# ip route add 192.168.1.0/24 dev eth0
-    [root@packstack ~]# ip route add 192.168.2.0/24 via 192.168.0.10 dev eth0
+```
+[root@packstack ~]# ip route add 192.168.1.0/24 dev eth0
+[root@packstack ~]# ip route add 192.168.2.0/24 via 192.168.0.10 dev eth0
+```
 
   添加缺省路由：
 
-    [root@packstack ~]# ip route add default via 192.168.0.1
-
+```
+[root@packstack ~]# ip route add default via 192.168.0.1
+```
 
 删除路由：
 
 
-    [root@packstack ~]# ip route delete 192.168.1.0/24
-    [root@packstack ~]# ip route delete 192.168.2.0/24
-    [root@packstack ~]# ip route delete default
+```
+[root@packstack ~]# ip route delete 192.168.1.0/24
+[root@packstack ~]# ip route delete 192.168.2.0/24
+[root@packstack ~]# ip route delete default
+```
 
 
 ### IP 地址的配置
 
 通过 `ip` 命令可以给网络接口配置一个或多个 IP 地址，如下：
 
-    [root@packstack ~]# ip addr add 192.168.0.100 broadcast 192.168.0.255 dev eth0
-    [root@packstack ~]# ip addr add 192.168.0.200 broadcast 192.168.0.255 dev eth0
+```
+[root@packstack ~]# ip addr add 192.168.0.100 broadcast 192.168.0.255 dev eth0
+[root@packstack ~]# ip addr add 192.168.0.200 broadcast 192.168.0.255 dev eth0
+```
 
 查看所有的 IP 地址：
 
-    [root@packstack ~]# ip addr
-    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN
-        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-        inet 127.0.0.1/8 scope host lo
-           valid_lft forever preferred_lft forever
-        inet6 ::1/128 scope host
-           valid_lft forever preferred_lft forever
-    2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
-        link/ether fa:16:3e:08:e6:9c brd ff:ff:ff:ff:ff:ff
-        inet 192.168.0.9/24 brd 192.168.0.255 scope global dynamic eth0
-           valid_lft 57934sec preferred_lft 57934sec
-        inet 192.168.0.100/32 brd 192.168.0.255 scope global eth0
-           valid_lft forever preferred_lft forever
-        inet 192.168.0.200/32 brd 192.168.0.255 scope global eth0
-           valid_lft forever preferred_lft forever
-        inet6 fe80::f816:3eff:fe08:e69c/64 scope link
-           valid_lft forever preferred_lft forever
+```
+[root@packstack ~]# ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether fa:16:3e:08:e6:9c brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.9/24 brd 192.168.0.255 scope global dynamic eth0
+       valid_lft 57934sec preferred_lft 57934sec
+    inet 192.168.0.100/32 brd 192.168.0.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet 192.168.0.200/32 brd 192.168.0.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe08:e69c/64 scope link
+       valid_lft forever preferred_lft forever
+```
 
 删除一个 IP 地址：
 
-    [root@packstack ~]# ip addr delete 192.168.0.100/32 dev eth0
-    [root@packstack ~]# ip addr delete 192.168.0.200/32 dev eth0
+```
+[root@packstack ~]# ip addr delete 192.168.0.100/32 dev eth0
+[root@packstack ~]# ip addr delete 192.168.0.200/32 dev eth0
+```
 
 
 ### 基于策略的路由(Linux Policy Routing)
@@ -94,16 +109,20 @@ Linux 有传统的基于数据包目的地址的路由算法，和新的基于�
 
 查看所有的路由规则：
 
-    [root@packstack ~]# ip rule list
-    0:	from all lookup local
-    32766:	from all lookup main
-    32767:	from all lookup default
+```
+[root@packstack ~]# ip rule list
+0:	from all lookup local
+32766:	from all lookup main
+32767:	from all lookup default
+```
     
 系统默认有3条记录
 
-    0: from all lookup local
-    32766: from all lookup main
-    32767: from all lookup default
+```
+0: from all lookup local
+32766: from all lookup main
+32767: from all lookup default
+```
 
 各部分解释
 xx: 第一列数字是优先级，小的数字优先级高
@@ -116,13 +135,15 @@ Linux 缺省有 3 个路由表， local (不能改也不能删), main, 和 defau
 
 系统最多支持255个路由表。
 
-    [root@packstack ~]# cat /etc/iproute2/rt_tables
-    #
-    # reserved values
-    #
-    255	local
-    254	main
-    253	default
+```
+[root@packstack ~]# cat /etc/iproute2/rt_tables
+#
+# reserved values
+#
+255	local
+254	main
+253	default
+```
 
  可以看到系统保留的表及对应名称，
   * 253:default 
@@ -132,34 +153,40 @@ Linux 缺省有 3 个路由表， local (不能改也不能删), main, 和 defau
  查看路由表命令，参数可用数字或名称
 
 
-    [root@packstack ~]# ip route list table 254
-    default via 192.168.0.1 dev eth0  proto static  metric 100
-    192.168.0.0/24 dev eth0  proto kernel  scope link  src 192.168.0.9  metric 100
-    192.168.1.0/24 dev eth0  scope link
-    192.168.2.0/24 via 192.168.0.10 dev eth0
+```
+[root@packstack ~]# ip route list table 254
+default via 192.168.0.1 dev eth0  proto static  metric 100
+192.168.0.0/24 dev eth0  proto kernel  scope link  src 192.168.0.9  metric 100
+192.168.1.0/24 dev eth0  scope link
+192.168.2.0/24 via 192.168.0.10 dev eth0
+```
 
 假如现在我们有两块网卡，网卡一的地址是 10.1.0.80，另一块网卡的地址是 10.1.16.80， 我们现在定义一条新的路由规则，匹配源地址 10.1.16.80 的数据包，
 匹配路由表 218，并且路由表 218 的缺省网关为 10.1.16.1。
 
 具体做法如下：
 
-    # 匹配源地址是 10.1.16.80 的数据包，匹配路由表 218
-    [root@packstack ~]# ip rule add from 10.1.16.80/32 lookup 218 
+```
+# 匹配源地址是 10.1.16.80 的数据包，匹配路由表 218
+[root@packstack ~]# ip rule add from 10.1.16.80/32 lookup 218 
 
-    # 在 table 218 中添加路由
-    [root@packstack ~]# ip route add 10.1.16.0/24 table 100 dev eth2
+# 在 table 218 中添加路由
+[root@packstack ~]# ip route add 10.1.16.0/24 table 100 dev eth2
 
-    # 在 table 218 中添加缺省网关
-    [root@packstack ~]# ip route change default via 10.1.16.1 table 218
+# 在 table 218 中添加缺省网关
+[root@packstack ~]# ip route change default via 10.1.16.1 table 218
+```
     
 当服务器中路由信息较为复杂时，可以通过 `ip route get` 命令查看路由匹配情况，
 例如：
 
-    [root@packstack ~]# ip route
-    default via 192.168.0.1 dev eth0  proto static  metric 100
-    192.168.0.0/24 dev eth0  proto kernel  scope link  src 192.168.0.9  metric 100
-    192.168.1.0/24 dev eth0  scope link
-    192.168.2.0/24 via 192.168.0.10 dev eth0
-    [root@packstack ~]# ip route get 192.168.0.100
-    192.168.0.100 dev eth0  src 192.168.0.9
-        cache
+```
+[root@packstack ~]# ip route
+default via 192.168.0.1 dev eth0  proto static  metric 100
+192.168.0.0/24 dev eth0  proto kernel  scope link  src 192.168.0.9  metric 100
+192.168.1.0/24 dev eth0  scope link
+192.168.2.0/24 via 192.168.0.10 dev eth0
+[root@packstack ~]# ip route get 192.168.0.100
+192.168.0.100 dev eth0  src 192.168.0.9
+    cache
+```
