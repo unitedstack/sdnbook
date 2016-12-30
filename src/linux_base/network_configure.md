@@ -4,11 +4,7 @@
 
 ## 简介
 
-如今很多系统管理员依然通过组合使用诸如 ifconfig、route、arp 和 netstat 
-等命令行工具（统称为net-tools）来配置网络功能，解决网络故障。
-net-tools 起源于 BSD 的 TCP/IP 工具箱，后来成为老版本 Linux 内核中配置网络功
-能的工具。但自 2001 年起，Linux 社区已经对其停止维护。
-同时，一些 Linux 发行版比如 Arch Linux 和 CentOS/RHEL 7 则已经完全抛弃了 net-tools，只支持 iproute2。
+如今很多系统管理员依然通过组合使用诸如 ifconfig、route、arp 和 netstat 等命令行工具（统称为net-tools）来配置网络功能，解决网络故障。net-tools 起源于 BSD 的 TCP/IP 工具箱，后来成为老版本 Linux 内核中配置网络功能的工具。但自 2001 年起，Linux 社区已经对其停止维护。同时，一些 Linux 发行版比如 Arch Linux 和 CentOS/RHEL 7 则已经完全抛弃了 net-tools，只支持 iproute2。
 
 本节详细介绍 iproute2 在 Linux 网络下的使用。
 
@@ -104,8 +100,7 @@ default via 192.168.0.1 dev eth0  proto static  metric 100
 
 ### 基于策略的路由(Linux Policy Routing)
 
-Linux 有传统的基于数据包目的地址的路由算法，和新的基于策略的路由算法。
-新算法优点：支持多个路由表，支持按数据报属性（源地址、目的地址、协议、端口、数据包大小、内容等）选择不同路由表。
+Linux 有传统的基于数据包目的地址的路由算法，和新的基于策略的路由算法。新算法优点：支持多个路由表，支持按数据报属性（源地址、目的地址、协议、端口、数据包大小、内容等）选择不同路由表。
 
 查看所有的路由规则：
 
@@ -126,8 +121,7 @@ Linux 有传统的基于数据包目的地址的路由算法，和新的基于�
 
 各部分解释
 xx: 第一列数字是优先级，小的数字优先级高
-lookup [xxx] : 表示搜索 xxx 路由表，1-252 之间的数字或名称
-中间部分内容：如 from all， 这是规则
+lookup [xxx] : 表示搜索 xxx 路由表，1-252 之间的数字或名称中间部分内容：如 from all， 这是规则
 
 整行的意思就是，如果一个数据包符合规则（源地址、目的地址、协议、端口、数据包大小、内容等），则使用指定路由表。
 

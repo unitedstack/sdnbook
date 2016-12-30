@@ -5,14 +5,9 @@
 ## CPU 亲和性绑定
 
 
-CPU 的亲和性， 就是进程要尽量在指定的 CPU 上尽量长时间地运行而不被调度到其他处理器。 
-在多核运行的机器上，每个 CPU 本身自己会有缓存，缓存着进程使用的信息，
-进程可能会被操作系统调度到其他 CPU 上， 导致 CPU cache 命中率就低了，
-当进行 CPU 亲和性绑定后，程序就会一直在指定的 CPU 运行，
- 不会被操作系统调度到其他 CPU 上在一定程度上能提高性能。
+CPU 的亲和性， 就是进程要尽量在指定的 CPU 上尽量长时间地运行而不被调度到其他处理器。 在多核运行的机器上，每个 CPU 本身自己会有缓存，缓存着进程使用的信息，进程可能会被操作系统调度到其他 CPU 上， 导致 CPU cache 命中率就低了，当进行 CPU 亲和性绑定后，程序就会一直在指定的 CPU 运行，不会被操作系统调度到其他 CPU 上在一定程度上能提高性能。
 
-网卡队列跟 CPU 绑定是将各个队列通过中断绑定到不同的核上，以满足网卡的需求。
-同时也可以降低单个CPU的负载，提升系统的吞吐能力。
+网卡队列跟 CPU 绑定是将各个队列通过中断绑定到不同的核上，以满足网卡的需求。同时也可以降低单个CPU的负载，提升系统的吞吐能力。
 
 配置网卡多队列中断绑定的脚本在 UnitedStack GIT 仓库中 maintenance 项目内
 
@@ -30,9 +25,7 @@ CPU 的亲和性， 就是进程要尽量在指定的 CPU 上尽量长时间地�
 
 ### UDP flow hash算法
 
-网卡驱动支持的哈希算法，能够把同一条流的数据包哈希到同一个队列中。在上一步的操作中，已经实现了队列
-跟 CPU 的亲和性，此时就能做到数据流跟 CPU 的亲和性。在云平台中开启该参数主要是作用于 UDP，
-为了提高 VxLAN 的性能。
+网卡驱动支持的哈希算法，能够把同一条流的数据包哈希到同一个队列中。在上一步的操作中，已经实现了队列跟 CPU 的亲和性，此时就能做到数据流跟 CPU 的亲和性。在云平台中开启该参数主要是作用于 UDP，为了提高 VxLAN 的性能。
 
 设置某个网卡的 flow 哈希，以 eth3 为例
 
@@ -42,22 +35,18 @@ ethtool -N eth3 rx-flow-hash udp4 sdnf
 
 ### conntrack 内核参数优化
 
-内核中的 netfilter 模块为会纪录经过内核的每一个连接的状态，用来做带状态的防火墙。在 Neutron 中，
-conntrack 在两个场景其着关键性作用：
+内核中的 netfilter 模块为会纪录经过内核的每一个连接的状态，用来做带状态的防火墙。在 Neutron 中，conntrack 在两个场景其着关键性作用：
 
  * security group，带状态的访问控制规则。跟 ACL 不同，Neutron 中的 security group 不需要双向放行,
  conntrack 会纪录该连接的状态，匹配该连接的每个数据包，自动允许该连接双向通信
 
- * SNAT，路由器开启公网网关之后，与该路由器关联的子网中的虚拟机都能够通过该网关访问公网，在这个过程中
-conntrack 会纪录每个连接，在外部回包时就能够 DNAT 到正确的虚拟机上
+ * SNAT，路由器开启公网网关之后，与该路由器关联的子网中的虚拟机都能够通过该网关访问公网，在这个过程中 conntrack 会纪录每个连接，在外部回包时就能够 DNAT 到正确的虚拟机上
 
 内核中 conntrack table 实现模型：
 
 ![conntrack_hashtable][1]
 
-由 conntrack 表的实现可以得知，conntrack 表是根据哈希算法来查找 tuple 表项，时间复杂度为 O(1),
-到前面固定大小的hash table 满了，就会用链地址法在冲突的 conntrack 放在hastable 邻接的链表中，
-后续的查找会退化成线性查找，时间复杂度退化为 O(n)，造成包处理流程很长。
+由 conntrack 表的实现可以得知，conntrack 表是根据哈希算法来查找 tuple 表项，时间复杂度为 O(1), 到前面固定大小的hash table 满了，就会用链地址法在冲突的 conntrack 放在hastable 邻接的链表中，后续的查找会退化成线性查找，时间复杂度退化为 O(n)，造成包处理流程很长。
 
 
 #### 配置方法
@@ -91,8 +80,7 @@ sysctl -w net.ipv4.netfilter.ip_conntrack_generic_timeout=120
 sysctl -w net.ipv4.netfilter.ip_conntrack_max=12582912
 ```
 
-在极端情况下，router 的 namespace 中发生丢包时，查看可能查看系统 message 日志没有类似 conntrack 表满的警告信息，
-可以把以下参数的值稍微减小 1/3
+在极端情况下，router 的 namespace 中发生丢包时，查看可能查看系统 message 日志没有类似 conntrack 表满的警告信息，可以把以下参数的值稍微减小 1/3
 
 ```
 net.ipv4.netfilter.ip_conntrack_icmp_timeout
@@ -143,8 +131,7 @@ sysctl -w net.ipv4.netfilter.ip_conntrack_generic_timeout=120
 sysctl -w net.ipv4.netfilter.ip_conntrack_max=12582912
 ```
 
-在极端情况下，router 的 namespace 中发生丢包时，查看可能查看系统 message 日志没有类似 conntrack 表满的警告信息，
-可以把以下参数的值稍微减小 1/3
+在极端情况下，router 的 namespace 中发生丢包时，查看可能查看系统 message 日志没有类似 conntrack 表满的警告信息，可以把以下参数的值稍微减小 1/3
 
 ```
 net.ipv4.netfilter.ip_conntrack_icmp_timeout

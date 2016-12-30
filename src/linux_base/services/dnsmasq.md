@@ -4,15 +4,11 @@
 
 ## 简介
 
-Dnsmasq 提供 DNS 缓存和 DHCP 服务功能。
-作为域名解析服务器 (DNS)，dnsmasq 可以通过缓存 DNS 请求来提高对访问过的网址
-的连接速度。作为 DHCP 服务器，dnsmasq 可以用于为局域网电脑分配内网 IP 地址和提供路由。
-DNS 和 DHCP 两个功能可以同时或分别单独实现。dnsmasq 轻量且易配置，适用于个人用户或少于 50 台主机的网络。
+Dnsmasq 提供 DNS 缓存和 DHCP 服务功能。作为域名解析服务器 (DNS)，dnsmasq 可以通过缓存 DNS 请求来提高对访问过的网址的连接速度。作为 DHCP 服务器，dnsmasq 可以用于为局域网电脑分配内网 IP 地址和提供路由。DNS 和 DHCP 两个功能可以同时或分别单独实现。dnsmasq 轻量且易配置，适用于个人用户或少于 50 台主机的网络。
 
 ## DHCP 服务
 
-其中一些关键的配置如下，配置文件 `/etc/dnsmasq.conf` 中的注释已经给出了非常详
-细的解释。
+其中一些关键的配置如下，配置文件 `/etc/dnsmasq.conf` 中的注释已经给出了非常详细的解释。
 
 
 ```
@@ -57,10 +53,7 @@ dhcp-option=3,192.168.0.1
 
 ## DNS 服务
 
-dnsmasq 能够缓存外部 DNS 记录，同时提供本地 DNS 解析或者作为外部 DNS 的代理，
-即 dnsmasq 会首先查找 `/etc/hosts` 等本地解析文件，
-然后再查找 `/etc/resolv.conf` 等外部 nameserver 配置文件中定义的外部 DNS。
-所以说 dnsmasq 是一个很不错的 DNS 中继。DNS 配置同样写入 dnsmasq.conf 配置文件里。
+dnsmasq 能够缓存外部 DNS 记录，同时提供本地 DNS 解析或者作为外部 DNS 的代理，即 dnsmasq 会首先查找 `/etc/hosts` 等本地解析文件，然后再查找 `/etc/resolv.conf` 等外部 nameserver 配置文件中定义的外部 DNS。所以说 dnsmasq 是一个很不错的 DNS 中继。DNS 配置同样写入 dnsmasq.conf 配置文件里。
 
 
 ```
