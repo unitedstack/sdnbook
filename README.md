@@ -4,6 +4,10 @@
 
 ## 前言
 
+ ![][1]
+
+_苌智_ _黄木_
+
 ### UnitedStack<sup>®</sup> United Networking Platform 简介
 
 UnitedStack<sup>®</sup> United Networking Platform（以下简称 UnitedStack<sup>®</sup> UNP）是一个以 UnitedStack OpenStack 为中心，
@@ -57,3 +61,4 @@ UnitedStack<sup>®</sup> UNP Wilkes 的基础组成包含但不限于以下方�
   - VPN 设备
 
 
+[1]: images/cover.png
