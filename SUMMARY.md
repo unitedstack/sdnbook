@@ -28,7 +28,7 @@
    * [网络配置](src/linux_base/network_configure.md)
    * [以太网桥管理](src/linux_base/brctl.md)
    * [IPtables 和 Netfilter](src/linux_base/stack.md)
-   * [网络服务](src/linux_base/services.md)
+   * [网络服务](src/linux_base/services/overview.md)
        * [DHCP 服务器之 Dnsmasq](src/linux_base/services/dnsmasq.md)
        * [DNS 服务器之 Bind](src/linux_base/services/dns.md)
        * [HAProxy](src/linux_base/services/haproxy.md)
